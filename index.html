@@ -171,32 +171,33 @@
     <script>
         // console.log(window.matchMedia('screen and (max-width: 767px)'));
         const ipad = window.matchMedia('screen and (max-width: 767px)')
-        
+
         const burger_button = document.querySelector('#burger-menu');
         const menu = document.querySelector('.menu');
-        
-       
+
+
         ipad.addListener(validation)
-        function validation (event){
+
+
+        function validation(event) {
             console.log(event.matches)
-            if (event.matches){
-            burger_button.addEventListener('click',hideShow)
+            if (event.matches) {
+                burger_button.addEventListener('click', hideShow)
             } else {
-                burger_button.removeEventListener('click',hideShow)
+                burger_button.removeEventListener('click', hideShow)
             }
         }
+        validation(ipad);
 
-        function hideShow (){
-            if (menu.classList.contains('is-active')){
+        function hideShow() {
+            if (menu.classList.contains('is-active')) {
                 menu.classList.remove('is-active');
+
             } else {
                 menu.classList.add('is-active');
             }
-        
-        }
 
-        
-        
+        }
     </script>
 
 </body>
